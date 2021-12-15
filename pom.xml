@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://3.24.181.178:9000</sonar.host.url>
+		<sonar.host.url>http://3.24.181.178:9000/</sonar.host.url>
                 <sonar.login>1dc2c9d3e98722eb5c797448ecbcb918815fe424</sonar.login>
 		<!-- <sonar.password>admin</sonar.password>    -->
               
