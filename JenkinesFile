@@ -1,0 +1,49 @@
+node 
+{
+
+def mavenHome = tool name: "maven3.8.4"
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], pipelineTriggers([pollSCM('* * * * *')])])
+
+stage('Checkoutcode'){
+
+git branch: 'development', credentialsId: '90b43822-1dbd-475c-870f-eedc85aa083b', url: 'https://github.com/nikhilband/maven-web-application.git'
+
+}
+/*
+stage('Build'){
+
+sh "${mavenHome}/bin/mvn  clean package"
+
+}
+
+stage('ExecutingSonarQubeReport'){
+
+sh "${mavenHome}/bin/mvn sonar:sonar"
+
+}
+
+stage('UploadArtifactsIntoNexus'){
+
+sh "${mavenHome}/bin/mvn deploy"
+
+}
+
+stage('DeployAppintoTomcatServer'){
+
+sshagent(['ee89a1f7-77b9-4bc0-a4e1-8ab572abccc3']) {
+
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@13.236.9.60:/opt/apache-tomcat-9.0.54/webapps/"
+    
+}
+}
+
+stage('SendEmailNotification'){
+
+emailext body: '''Build over
+regards
+NSB''', subject: 'Build over', to: 'nikhilband083@gmail.com'
+
+}  */
+
+}
