@@ -1,4 +1,4 @@
-node ('node-wallmart-1')
+node ('node-wallmart-2')
 {
 echo "Dev Job"
 def mavenHome = tool name: "maven3.8.4"
